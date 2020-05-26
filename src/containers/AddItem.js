@@ -22,7 +22,7 @@ const AddItem = ({dispatch}) => {
                 dispatch(addItem(productInput.value, quantityInput.value));
 
                 productInput.value = "";
-                quantityInput.value = "";
+                quantityInput.value = "1";
             }}>
                 <div className="form-group row">
                     <div className="col">
@@ -34,7 +34,7 @@ const AddItem = ({dispatch}) => {
                     <div className="col-auto">
                         <label htmlFor="quantity" className="col-form-label text-right ">Quantity:</label>
                         <br/>
-                        <input type="number" name="quantity" id="quantity" defaultValue="1" className="form-control" ref={node => quantityInput = node}/>
+                        <input type="number" name="quantity" id="quantity" min="1" defaultValue="1" className="form-control" ref={node => quantityInput = node}/>
                     </div>
 
                     <div className="col-auto">

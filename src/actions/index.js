@@ -1,8 +1,12 @@
-let nextTodoId = 0;
+let nextItemId = localStorage.getItem("last_id");
+
+if(nextItemId === null){
+    nextItemId = 0
+}
 
 export const addItem = (product, quantity) => ({
     type: 'ADD_ITEM',
-    id: nextTodoId++,
+    id: nextItemId++,
     product,
     quantity
 });
